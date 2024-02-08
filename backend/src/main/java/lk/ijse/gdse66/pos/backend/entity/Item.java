@@ -37,4 +37,7 @@ public class Item {
         this.unitPrice = unitPrice;
     }
 
+    public Item(String itemId) {
+        this.itemId = itemId;
+    }
 }

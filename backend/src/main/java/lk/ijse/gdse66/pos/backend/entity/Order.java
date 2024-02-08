@@ -34,4 +34,8 @@ public class Order {
         this.orderDate = orderDate;
         this.customer = customer;
     }
+
+    public Order(String orderId) {
+        this.orderId = orderId;
+    }
 }

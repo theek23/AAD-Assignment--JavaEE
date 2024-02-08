@@ -38,4 +38,8 @@ public class OrderDetails {
         this.item = item;
         this.orders = orders;
     }
+
+    public OrderDetails(int orderDetailId) {
+        this.orderDetailId = orderDetailId;
+    }
 }

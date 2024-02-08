@@ -41,4 +41,7 @@ public class Customer {
         this.address = address;
         this.birthday = birthday;
     }
+    public Customer(String cusID) {
+        this.cusId = cusID;
+    }
 }
