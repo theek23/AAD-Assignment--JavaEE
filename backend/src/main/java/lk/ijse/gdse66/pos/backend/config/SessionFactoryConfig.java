@@ -20,8 +20,6 @@ public class SessionFactoryConfig {
 
         try {
             properties.load(Thread.currentThread().getContextClassLoader().getResourceAsStream("hibernate.properties"));
-            properties.setProperty("hibernate.connection.datasource", "java:comp/env/jdbc/pos");
-
         } catch (IOException e) {
             e.printStackTrace();
         }
