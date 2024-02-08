@@ -1,0 +1,249 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #372c2e;
+    color: #ffffff;
+}
+
+#app {
+    display: flex;
+    min-height: 100vh;
+}
+
+#sidebar {
+    width: 250px;
+    background-color: #563727;
+    padding: 20px;
+}
+
+#sidebar .menu-item {
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #7a431d;
+    cursor: pointer;
+}
+
+#sidebar .menu-item.active {
+    background-color: #de9e48;
+}
+
+#main-content {
+    flex: 1;
+    padding: 20px;
+}
+.dashboard {
+    display: block;
+    gap: 20px;
+}
+
+.dashboard-section {
+    display: flex;
+    min-width: 300px;
+    flex-wrap: wrap;
+}
+
+.dashboard-card {
+    background-color: #ffffff;
+    color: #372c2e;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.dashboard-card .card-title {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.dashboard-card.full-width {
+    width: 100%;
+}
+
+.dashboard-stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 20px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 2em;
+    color: #de9e48;
+}
+
+.stat-label {
+    font-size: 1em;
+}
+
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+
+.styled-table thead tr {
+    background-color: #de9e48;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #de9e48;
+}
+
+.dashboard-card {
+    background-color: #ffffff;
+    color: #372c2e;
+    padding: 20px;
+    margin-bottom: 20px; 
+}
+.view {
+    display: none;
+}
+
+.view.active {
+    display: block;
+}
+@media (max-width: 768px) {
+#sidebar {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+}
+
+#main-content {
+    padding: 10px;
+}
+
+.dashboard {
+    flex-direction: column;
+}
+.dashboard-stats {
+    order: -1; /* Stats will move above the table on small screens */
+    margin-left: 0;
+    margin-bottom: 20px;
+    }
+
+    .styled-table {
+    min-width: 0;
+    }
+}
+.customer-view{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.form-container{
+    background: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    width: 50%;
+    margin-bottom: 40px;
+}
+.table-container {
+    background: #f0f0f0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  label, input, button,select {
+    display: block;
+    margin-bottom: 10px;
+  }
+  input,select{
+    width: 100%;
+  }
+  select{
+    height: 20px;
+  }
+  .form-details{
+    display: flex;
+  }
+  label{
+    color: black;
+    width: 50%;
+  }
+  input, button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  button {
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+  }
+  button:hover {
+    background-color: #555;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+  th {
+    background-color: #333;
+    color: white;
+  }
+  @media (max-width: 768px) {
+    label, input, button, th, td {
+      width: auto;
+      display: inline-block;
+      margin: 5px 0;
+    }
+    input[type="date"] {
+      width: 100%;
+    }
+    table, thead, tbody, th, td, tr {
+      display: block;
+    }
+    thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+    tr { border: 1px solid #ccc; }
+    td {
+      border: none;
+      position: relative;
+      padding-left: 50%;
+    }
+    td:before {
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+      content: attr(data-label);
+      font-weight: bold;
+    }
+  }

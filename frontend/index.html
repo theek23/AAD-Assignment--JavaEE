@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QuickTill POS</title>
+<link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+
+<div id="app">
+
+  <!-- Sidebar -->
+  <div id="sidebar">
+    <div id="logo">
+        <img src="" alt="">
+      <h1>QuickTill</h1>
+    </div>
+    <div class="menu">
+      <div class="menu-item active">Home</div>
+      <div class="menu-item">Customers</div>
+      <div class="menu-item">Items</div>
+      <div class="menu-item">Orders</div>
+      <div class="menu-item">Report and Analytics</div>
+      <div class="menu-item">Settings</div>
+    </div>
+    <div class="menu-item">Log Out</div>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main-content">
+    <!-- Home View -->
+    <div class="view" id="home-view">
+        <div class="dashboard">
+          <div class="dashboard-section">
+            <div class="dashboard-card">
+              <div class="card-title">Top Selling Items</div>
+              <table class="styled-table">
+                <thead>
+                  <tr>
+                    <th>Item ID</th>
+                    <th>Item Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Dynamic rows will be added here -->
+                </tbody>
+              </table>
+            </div>
+            <div class="dashboard-card">
+              <div class="dashboard-stats">
+                <div class="stat">
+                  <div class="stat-value">100</div>
+                  <div class="stat-label">Today Total Sales</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-value">Rs 100.00</div>
+                  <div class="stat-label">Today Income</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-value">100</div>
+                  <div class="stat-label">Total Customers</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dashboard-section">
+            <div class="dashboard-card full-width">
+              <div class="card-title">Recent Orders</div>
+              <table class="styled-table">
+                <thead>
+                  <tr>
+                    <th>Order Id</th>
+                    <th>Customer Name</th>
+                    <th>Contact No</th>
+                    <th>Address</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Dynamic rows will be added here -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    <!-- Customers View -->
+    <div class="view" id="customers-view">
+      <div class="customer-view">
+        <div class="form-container">
+          <div class="form-details">
+            <label for="customer-id">Customer ID</label>
+            <input id="customer-id" type="text">
+          </div>
+          
+          <div class="form-details">
+            <label for="name">Name</label>
+            <input id="name" type="text">
+          </div>
+          
+          <div class="form-details">
+            <label for="contact-no">Contact No</label>
+            <input id="contact-no" type="text">
+          </div>
+          
+          <div class="form-details">
+            <label for="address">Address</label>
+            <input id="address" type="text">
+          </div>
+          
+          <div class="form-details">
+            <label for="birthday">Birthday</label>
+            <input id="birthday" type="date">
+          </div>
+          
+          <div class="customer-btns">
+            <button type="button">Save</button>
+            <button type="button">Update</button>
+            <button type="button">Delete</button>
+            <button type="button">Clear</button>
+          </div>
+        </div>
+      </div>
+      
+    
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Customer ID</th>
+              <th>Customer Name</th>
+              <th>Contact No</th>
+              <th>Address</th>
+              <th>Birth Day</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Table rows will be added here -->
+          </tbody>
+        </table>
+      </div>
+      <!-- Content for Customers -->
+    </div>
+    
+    <!-- Items View -->
+    <div class="view" id="items-view">
+      <div class="customer-view">
+        <div class="form-container">
+          <div class="form-details">
+            <label for="customer-id">Item ID</label>
+            <input id="item-id" type="text">
+          </div>
+          
+          <div class="form-details">
+            <label for="description">Description</label>
+            <input id="description" type="text">
+          </div>
+          
+          <div class="form-details">
+            <label for="price">Price</label>
+            <input id="price" type="text">
+          </div>
+          
+          <div class="form-details">
+            <label for="qty">QTY</label>
+            <input id="qty" type="text">
+          </div>
+          
+          <div class="customer-btns">
+            <button type="button">Save</button>
+            <button type="button">Update</button>
+            <button type="button">Delete</button>
+            <button type="button">Clear</button>
+          </div>
+        </div>
+      </div>
+      
+    
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Item ID</th>
+              <th>Item Description</th>
+              <th>Price</th>
+              <th>QTY</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Table rows will be added here -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Content for Items -->
+    </div>
+    
+    <!-- Orders View -->
+    <div class="view" id="orders-view">
+      <!-- Content for Orders -->        
+      <div class="customer-details-form">
+        <div class="form-details">
+          <label for="select_customer">Select Customer</label>
+          <select name="select_customer" id="select_customer"></select>
+        </div>
+
+        <div class="form-details">
+          <label for="customer-name">Customer-Name</label>
+          <input id="select_customer" type="text">
+        </div>
+
+        <div class="form-details">
+          <label for="date_time">Date & Time</label>
+          <input id="date_time" type="text">
+        </div>
+      </div>
+
+
+    </div>
+    
+    <!-- Report and Analytics View -->
+    <div class="view" id="report-view">
+      <!-- Content for Report and Analytics -->
+    </div>
+    
+    <!-- Settings View -->
+    <div class="view" id="settings-view">
+    </div>
+  </div>
+
+</div>
+
+<script src="controller/script.js"></script>
+</body>
+</html>
