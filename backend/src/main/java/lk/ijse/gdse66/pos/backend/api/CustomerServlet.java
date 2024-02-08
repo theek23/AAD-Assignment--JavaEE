@@ -51,20 +51,19 @@ public class CustomerServlet extends HttpServlet {
     }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-
-        CustomerDTO customer = JsonbBuilder.create().fromJson(req.getReader(),CustomerDTO.class);
-        String id = customer.getCusID();
+        Jsonb jsonb = JsonbBuilder.create();
+        CustomerDTO customer = jsonb.fromJson(req.getReader(), CustomerDTO.class);
+        /*String id = customer.getCusID();
         String name = customer.getCusName();
         int phNO = customer.getPhNo();
         String address = customer.getAddress();
-        String birthday = customer.getBirthday();
+        String birthday = customer.getBirthday();*/
+//        if (validation(id, resp, name, phNO, address, birthday)) return;
 
-        if (validation(id, resp, name, phNO, address, birthday)) return;
-
-        if(cusIDList.contains(id)){
+        /*if(cusIDList.contains(id)){
             sendServerMsg(resp, HttpServletResponse.SC_BAD_REQUEST, "ID already added!");
             return;
-        }
+        }*/
 
         boolean isSaved = customerBO.saveCustomer(customer);
 
@@ -159,11 +158,12 @@ public class CustomerServlet extends HttpServlet {
 
     private void getAllCustomer(HttpServletResponse resp) {
         List<CustomerDTO> customerList = customerBO.getAllCustomer();
-
+        System.out.println(customerList);
         Jsonb jsonb = JsonbBuilder.create();
         try {
             jsonb.toJson(customerList, resp.getWriter());
         } catch (IOException e) {
+            System.out.println("Methanata Enne");
             sendServerMsg(resp, HttpServletResponse.SC_INTERNAL_SERVER_ERROR, e.getLocalizedMessage());
         }
     }

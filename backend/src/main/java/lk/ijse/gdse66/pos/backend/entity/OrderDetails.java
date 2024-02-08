@@ -24,7 +24,7 @@ public class OrderDetails {
     private double price;
 
     @ManyToOne
-    @JoinColumn(name = "item_code", referencedColumnName = "item_code", nullable = false)
+    @JoinColumn(name = "item_id", referencedColumnName = "item_id", nullable = false)
     private Item item;
 
     @ManyToOne

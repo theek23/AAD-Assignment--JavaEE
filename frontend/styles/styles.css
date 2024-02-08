@@ -169,6 +169,9 @@ body, html {
     padding: 20px;
     margin-bottom: 20px;
   }
+tbody{
+    color: red;
+}
   label, input, button,select {
     display: block;
     margin-bottom: 10px;
